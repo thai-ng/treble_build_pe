@@ -9,7 +9,7 @@ Change-Id: I5ae38741374b25b84595a9eae9bdda7afe2cac05
  1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/main.cpp b/main.cpp
-index 4a418d5..de68844 100644
+index 52aa896..86e0aa5 100644
 --- a/main.cpp
 +++ b/main.cpp
 @@ -68,6 +68,7 @@ int main(int argc, char** argv) {

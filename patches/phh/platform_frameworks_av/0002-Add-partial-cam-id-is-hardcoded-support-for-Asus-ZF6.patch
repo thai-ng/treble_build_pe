@@ -1,4 +1,4 @@
-From 551bc2bd86d400a94b9974692aa2cf3ddfb1d97c Mon Sep 17 00:00:00 2001
+From 81b3b336ac44db427aafaf075a586f851564d9ba Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Tue, 1 Oct 2019 13:35:49 +0200
 Subject: [PATCH 02/19] Add (partial, cam id is hardcoded) support for Asus ZF6

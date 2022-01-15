@@ -1,4 +1,4 @@
-From 52c67c6f33c232be7e7c57450996b1558e60e206 Mon Sep 17 00:00:00 2001
+From 6c767d3ffbb008832c17be078e64dc2d7bed3dd0 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 6 Jun 2020 18:21:56 +0200
 Subject: [PATCH 09/28] HOME deserves to wake-up devices just as well as back

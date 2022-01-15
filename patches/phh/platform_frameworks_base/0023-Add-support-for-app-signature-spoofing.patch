@@ -1,4 +1,4 @@
-From fd60c8e7fb2dd37add736bcbd4b6918ec547f39a Mon Sep 17 00:00:00 2001
+From b7f215a4c33407bd7693491b52a4f8b98a856c74 Mon Sep 17 00:00:00 2001
 From: Danny Lin <danny@kdrag0n.dev>
 Date: Sat, 16 Oct 2021 05:27:57 -0700
 Subject: [PATCH 23/28] Add support for app signature spoofing
@@ -105,7 +105,7 @@ index b58638cc3ade..8cf98fa56bf6 100644
      <string name="permlab_statusBar">disable or modify status bar</string>
      <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
 diff --git a/services/core/java/com/android/server/pm/PackageManagerService.java b/services/core/java/com/android/server/pm/PackageManagerService.java
-index 6da70ad77d67..48ba3e0ba7ab 100644
+index d648f5ea9d97..5116b5e538a4 100644
 --- a/services/core/java/com/android/server/pm/PackageManagerService.java
 +++ b/services/core/java/com/android/server/pm/PackageManagerService.java
 @@ -3323,6 +3323,29 @@ public class PackageManagerService extends IPackageManager.Stub

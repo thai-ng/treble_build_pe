@@ -1,4 +1,4 @@
-From 1f3c62b736bd3c84830340da2704b0773f955654 Mon Sep 17 00:00:00 2001
+From 3ff74e91fd3c01b8f308b43501cbdd8ac2acd53f Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 7 Aug 2021 11:11:39 +0200
 Subject: [PATCH 17/19] When aux cameras are enabled, ignore "system only"

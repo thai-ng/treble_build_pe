@@ -1,7 +1,7 @@
-From 36d81fe3efbe43cc4dbfc1c6cb2d06c8531af444 Mon Sep 17 00:00:00 2001
+From c224a0a10d72adc586ffe323d3683a102021ac3b Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 19 Dec 2021 17:04:51 -0500
-Subject: [PATCH 11/12] For FOD/HBM on Asus devices, call the HWC extended call
+Subject: [PATCH 11/13] For FOD/HBM on Asus devices, call the HWC extended call
  setLayerClass
 
 Change-Id: Id8773fc3d2fb6d2bd228503b1ee0d77864b2eb05
