@@ -1,7 +1,7 @@
 From df6e77eabe8083191e2984182d8aa82da7d08247 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Sat, 3 Oct 2020 14:28:35 -0700
-Subject: [PATCH] build: Fix build number
+Subject: [PATCH 4/4] build: Fix build number
 
 This is only valid for GSI images.
 

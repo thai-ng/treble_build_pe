@@ -1,7 +1,7 @@
 From 69faf67abb4ee23d15b7219a893b359641b88bca Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Wed, 20 Oct 2021 11:07:19 +0100
-Subject: [PATCH 2/3] config: Remove duplicate ro.adb.secure
+Subject: [PATCH 2/4] config: Remove duplicate ro.adb.secure
 
 Change-Id: I7a507b06acd28dbc6ab507c8c14e85c16600288c
 ---

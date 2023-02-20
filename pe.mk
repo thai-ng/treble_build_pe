@@ -18,4 +18,4 @@ PRODUCT_PACKAGES += \
     libaptXHD_encoder
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.system.ota.json_url=https://raw.githubusercontent.com/ponces/treble_build_pe/thirteen/ota.json
+    ro.system.ota.json_url=https://raw.githubusercontent.com/ponces/treble_build_pe/thirteen-plus/ota.json

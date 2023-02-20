@@ -1,7 +1,7 @@
 From f9a585a7a61eae3ec0a9e482269424668a27c8d3 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Wed, 20 Oct 2021 15:54:26 +0100
-Subject: [PATCH 3/3] build: Disable inline kernel building
+Subject: [PATCH 3/4] build: Disable inline kernel building
 
 Change-Id: I4c01aa093474a8017366bd5e98586c58b2cd6452
 ---
