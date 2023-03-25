@@ -11,7 +11,7 @@ for project in $(cd $patches/patches/$tree; echo *); do
         [ "$p" == treble/app ] && p=treble_app
         [ "$p" == vendor/hardware/overlay ] && p=vendor/hardware_overlay
         pushd $p &>/dev/null
-	for patch in $patches/patches/$tree/$project/*.patch; do
+        for patch in $patches/patches/$tree/$project/*.patch; do
             git am $patch || exit
         done
         popd &>/dev/null

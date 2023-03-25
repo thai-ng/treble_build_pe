@@ -38,15 +38,18 @@ applyPatches() {
     echo
 
     echo "--> Applying TrebleDroid patches"
-    cd device/phh/treble
-    cp $BL/pe.mk .
-    bash generate.sh pe
-    cd ../../..
     bash $BL/apply-patches.sh $BL trebledroid
     echo
 
     echo "--> Applying personal patches"
     bash $BL/apply-patches.sh $BL personal
+    echo
+
+    echo "--> Generating makefiles"
+    cd device/phh/treble
+    cp $BL/pe.mk .
+    bash generate.sh pe
+    cd ../../..
     echo
 }
 
