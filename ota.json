@@ -1,21 +1,21 @@
 {
-  "version": "v2023.01.04",
-  "date": "1672853130",
+  "version": "v2023.03.26",
+  "date": "1679841332",
   "variants": [
     {
       "name": "treble_arm64_bvN",
-      "size": "1530616324",
-      "url": "https://github.com/ponces/treble_build_pe/releases/download/v2023.01.04/PixelExperience_arm64-ab-13.0-20230104-UNOFFICIAL.img.xz"
+      "size": "1309306056",
+      "url": "https://github.com/ponces/treble_build_pe/releases/download/v2023.03.26/PixelExperience_arm64-ab-13.0-20230326-UNOFFICIAL.img.xz"
     },
     {
       "name": "treble_arm64_bvN-slim",
-      "size": "1136303528",
-      "url": "https://github.com/ponces/treble_build_pe/releases/download/v2023.01.04/PixelExperience_arm64-ab-slim-13.0-20230104-UNOFFICIAL.img.xz"
+      "size": "1044050744",
+      "url": "https://github.com/ponces/treble_build_pe/releases/download/v2023.03.26/PixelExperience_arm64-ab-slim-13.0-20230326-UNOFFICIAL.img.xz"
     },
     {
       "name": "treble_arm64_bvN-vndklite",
-      "size": "1490545328",
-      "url": "https://github.com/ponces/treble_build_pe/releases/download/v2023.01.04/PixelExperience_arm64-ab-vndklite-13.0-20230104-UNOFFICIAL.img.xz"
+      "size": "1274687624",
+      "url": "https://github.com/ponces/treble_build_pe/releases/download/v2023.03.26/PixelExperience_arm64-ab-vndklite-13.0-20230326-UNOFFICIAL.img.xz"
     }
   ]
 }
