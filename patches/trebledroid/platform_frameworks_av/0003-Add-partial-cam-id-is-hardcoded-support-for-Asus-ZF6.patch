@@ -1,4 +1,4 @@
-From 8ec6126da85bd0ea3ca92093f2fb00b28a9abadc Mon Sep 17 00:00:00 2001
+From cc3096d1c24dc8a3c25253ebc75e0321df0eda84 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Tue, 1 Oct 2019 13:35:49 +0200
 Subject: [PATCH 03/27] Add (partial, cam id is hardcoded) support for Asus ZF6
@@ -23,7 +23,7 @@ index 3f8a0317e1..688c1e7270 100644
  #include <pthread.h>
  #include <poll.h>
 @@ -143,6 +144,7 @@ const String16 CameraService::kWatchAllClientsFlag("all");
- static std::set<String8> sServiceErrorEventSet;
+ static std::string sCurrPackageName;
  
  CameraService::CameraService() :
 +        mPhysicalFrontCamStatus(false),
