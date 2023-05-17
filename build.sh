@@ -99,15 +99,40 @@ buildVndkliteVariant() {
 
 generatePackages() {
     echo "--> Generating packages"
-    xz -cv $BD/system-treble_arm64_bvN.img -T0 > $BD/PixelExperience_Plus_arm64-ab-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
-    xz -cv $BD/system-treble_arm64_bvN-vndklite.img -T0 > $BD/PixelExperience_Plus_arm64-ab-vndklite-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
-    xz -cv $BD/system-treble_arm64_bvN-slim.img -T0 > $BD/PixelExperience_Plus_arm64-ab-slim-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
+    buildDate="$(date +%Y%m%d)"
+    xz -cv $BD/system-treble_arm64_bvN.img -T0 > $BD/PixelExperience_Plus_arm64-ab-13.0-$buildDate-UNOFFICIAL.img.xz
+    xz -cv $BD/system-treble_arm64_bvN-vndklite.img -T0 > $BD/PixelExperience_Plus_arm64-ab-vndklite-13.0-$buildDate-UNOFFICIAL.img.xz
+    xz -cv $BD/system-treble_arm64_bvN-slim.img -T0 > $BD/PixelExperience_Plus_arm64-ab-slim-13.0-$buildDate-UNOFFICIAL.img.xz
     rm -rf $BD/system-*.img
     echo
 }
 
+generateOta() {
+    echo "--> Generating OTA file"
+    version="$(date +v%Y.%m.%d)"
+    timestamp="$(date +%s)"
+    json="{\"version\": \"$version\",\"date\": \"$timestamp\",\"variants\": ["
+    find $BD/ -name "PixelExperience_Plus_*" | {
+        while read file; do
+            filename="$(basename $file)"
+            if [[ $filename == *"vndklite"* ]]; then
+                name="treble_arm64_bvN-vndklite"
+            elif [[ $filename == *"slim"* ]]; then
+                name="treble_arm64_bvN-slim"
+            else
+                name="treble_arm64_bvN"
+            fi
+            size=$(wc -c $file | awk '{print $1}')
+            url="https://github.com/ponces/treble_build_pe/releases/download/$version/$filename"
+            json="${json} {\"name\": \"$name\",\"size\": \"$size\",\"url\": \"$url\"},"
+        done
+        json="${json%?}]}"
+        echo "$json" | jq . > $BL/ota.json
+    }
+    echo
+}
+
 START=`date +%s`
-BUILD_DATE="$(date +%Y%m%d)"
 
 initRepos
 syncRepos
@@ -118,6 +143,7 @@ buildVariant
 buildSlimVariant
 buildVndkliteVariant
 generatePackages
+generateOta
 
 END=`date +%s`
 ELAPSEDM=$(($(($END-$START))/60))
