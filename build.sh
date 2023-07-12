@@ -74,7 +74,7 @@ buildVariant() {
     lunch treble_arm64_bvN-userdebug
     make -j$(nproc --all) installclean
     make -j$(nproc --all) systemimage
-    mv $OUT/system.img $BD/system-treble_arm64_bvN.img
+    # mv $OUT/system.img $BD/system-treble_arm64_bvN.img
     echo
 }
 
@@ -134,16 +134,16 @@ generateOta() {
 
 START=$(date +%s)
 
-initRepos
-syncRepos
-applyPatches
+# initRepos
+# syncRepos
+# applyPatches
 setupEnv
 buildTrebleApp
 buildVariant
-buildSlimVariant
-buildVndkliteVariant
-generatePackages
-generateOta
+# buildSlimVariant
+# buildVndkliteVariant
+# generatePackages
+# generateOta
 
 END=$(date +%s)
 ELAPSEDM=$(($(($END-$START))/60))
