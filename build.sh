@@ -76,6 +76,7 @@ buildVariant() {
     make -j$(nproc --all) systemimage
     # mv $OUT/system.img $BD/system-treble_arm64_bvN.img
     echo
+    . $BL/flash.sh
 }
 
 buildSlimVariant() {
