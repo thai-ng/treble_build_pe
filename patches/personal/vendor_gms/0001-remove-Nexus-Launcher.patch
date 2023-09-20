@@ -1,0 +1,68 @@
+From 3e4fdc661f5b3af29712a210abede7c5c1cbba9f Mon Sep 17 00:00:00 2001
+From: Thai Nguyen <thai_ng@outlook.com>
+Date: Tue, 19 Sep 2023 18:20:29 -0700
+Subject: [PATCH] remove Nexus Launcher
+
+---
+ common/Android.bp                             | 24 +++++++++----------
+ .../res/values/config.xml                     |  4 ++--
+ 2 files changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/common/Android.bp b/common/Android.bp
+index 13e423f..f8aff3c 100644
+--- a/common/Android.bp
++++ b/common/Android.bp
+@@ -543,18 +543,18 @@ android_app_import {
+ 	system_ext_specific: true,
+ }
+ 
+-android_app_import {
+-	name: "NexusLauncherRelease",
+-	owner: "gms",
+-	apk: "proprietary/system_ext/priv-app/NexusLauncherRelease/NexusLauncherRelease.apk",
+-	overrides: ["Launcher3QuickStep", "TrebuchetQuickStep"],
+-	presigned: true,
+-	dex_preopt: {
+-		enabled: false,
+-	},
+-	privileged: true,
+-	system_ext_specific: true,
+-}
++// android_app_import {
++// 	name: "NexusLauncherRelease",
++// 	owner: "gms",
++// 	apk: "proprietary/system_ext/priv-app/NexusLauncherRelease/NexusLauncherRelease.apk",
++// 	// overrides: ["Launcher3QuickStep", "TrebuchetQuickStep"],
++// 	presigned: true,
++// 	dex_preopt: {
++// 		enabled: false,
++// 	},
++// 	privileged: true,
++// 	system_ext_specific: true,
++// }
+ 
+ android_app_import {
+ 	name: "PixelSetupWizard",
+diff --git a/overlay/PixelConfigOverlayCommon/res/values/config.xml b/overlay/PixelConfigOverlayCommon/res/values/config.xml
+index e54f6e0..8594903 100644
+--- a/overlay/PixelConfigOverlayCommon/res/values/config.xml
++++ b/overlay/PixelConfigOverlayCommon/res/values/config.xml
+@@ -290,13 +290,13 @@
+          android.os.action.POWER_SAVE_MODE_CHANGED. -->
+     <string name="config_powerSaveModeChangedListenerPackage" translatable="false">com.google.android.flipendo</string>
+ 
+-    <!-- Component name for the activity that will be presenting the Recents UI, which will receive
++    <!-- <!-- Component name for the activity that will be presenting the Recents UI, which will receive
+          special permissions for API related to fetching and presenting recent tasks. The default
+          configuration uses Launcehr3QuickStep as default launcher and points to the corresponding
+          recents component. When using a different default launcher, change this appropriately or
+          use the default systemui implementation: com.android.systemui/.recents.RecentsActivity -->
+     <string name="config_recentsComponentName" translatable="false"
+-            >com.google.android.apps.nexuslauncher/com.android.quickstep.RecentsActivity</string>
++            >com.google.android.apps.nexuslauncher/com.android.quickstep.RecentsActivity</string> -->
+ 
+     <!-- The package name for the default retail demo app.
+          This package must be trusted, as it has the permissions to query the usage stats on the
+-- 
+2.39.2
+

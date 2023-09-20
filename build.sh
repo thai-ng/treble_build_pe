@@ -16,7 +16,7 @@ BD=$HOME/builds
 initRepos() {
     if [ ! -d .repo ]; then
         echo "--> Initializing workspace"
-        repo init -u https://github.com/PixelExperience/manifest -b thirteen-plus
+        repo init -u https://github.com/thai-ng/manifest -b duo-thirteen-plus
         echo
 
         echo "--> Preparing local manifest"
@@ -136,11 +136,11 @@ generateOta() {
 START=$(date +%s)
 
 # initRepos
-# syncRepos
+syncRepos
 # applyPatches
-setupEnv
-buildTrebleApp
-buildVariant
+# setupEnv
+# buildTrebleApp
+# buildVariant
 # buildSlimVariant
 # buildVndkliteVariant
 # generatePackages
