@@ -74,7 +74,7 @@ buildVariant() {
     lunch treble_arm64_bvN-userdebug
     make -j$(nproc --all) installclean
     make -j$(nproc --all) systemimage
-    # mv $OUT/system.img $BD/system-treble_arm64_bvN.img
+    cp $OUT/system.img $BD/system-treble_arm64_bvN.img
     echo
     . $BL/flash.sh
 }
@@ -102,8 +102,8 @@ generatePackages() {
     echo "--> Generating packages"
     buildDate="$(date +%Y%m%d)"
     xz -cv $BD/system-treble_arm64_bvN.img -T0 > $BD/PixelExperience_Plus_arm64-ab-13.0-$buildDate-UNOFFICIAL.img.xz
-    xz -cv $BD/system-treble_arm64_bvN-vndklite.img -T0 > $BD/PixelExperience_Plus_arm64-ab-vndklite-13.0-$buildDate-UNOFFICIAL.img.xz
-    xz -cv $BD/system-treble_arm64_bvN-slim.img -T0 > $BD/PixelExperience_Plus_arm64-ab-slim-13.0-$buildDate-UNOFFICIAL.img.xz
+    # xz -cv $BD/system-treble_arm64_bvN-vndklite.img -T0 > $BD/PixelExperience_Plus_arm64-ab-vndklite-13.0-$buildDate-UNOFFICIAL.img.xz
+    # xz -cv $BD/system-treble_arm64_bvN-slim.img -T0 > $BD/PixelExperience_Plus_arm64-ab-slim-13.0-$buildDate-UNOFFICIAL.img.xz
     rm -rf $BD/system-*.img
     echo
 }
@@ -124,7 +124,7 @@ generateOta() {
                 name="treble_arm64_bvN"
             fi
             size=$(wc -c $file | awk '{print $1}')
-            url="https://github.com/ponces/treble_build_pe/releases/download/$version-plus/$filename"
+            url="https://github.com/thai-ng/treble_build_pe/releases/download/$version-plus/$filename"
             json="${json} {\"name\": \"$name\",\"size\": \"$size\",\"url\": \"$url\"},"
         done
         json="${json%?}]}"
@@ -136,15 +136,15 @@ generateOta() {
 START=$(date +%s)
 
 # initRepos
-syncRepos
+# syncRepos
 # applyPatches
-# setupEnv
-# buildTrebleApp
-# buildVariant
+setupEnv
+buildTrebleApp
+buildVariant
 # buildSlimVariant
 # buildVndkliteVariant
-# generatePackages
-# generateOta
+generatePackages
+generateOta
 
 END=$(date +%s)
 ELAPSEDM=$(($(($END-$START))/60))

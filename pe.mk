@@ -11,4 +11,4 @@ TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_SUPPORTS_CALL_RECORDING := true
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.system.ota.json_url=https://raw.githubusercontent.com/ponces/treble_build_pe/thirteen-plus/ota.json
+    ro.system.ota.json_url=https://raw.githubusercontent.com/thai-ng/treble_build_pe/thirteen-plus/ota.json
